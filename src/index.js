@@ -14,7 +14,7 @@ io.on("connection", (socket) => {
   console.log("new connection");
   io.emit("update_messages", messages);
   socket.on("new_message", (data) => {
-    messages.push(data.msg);
+    messages.push(data);
     console.log(messages);
     io.emit("update_messages", messages);
   });
